@@ -5,9 +5,10 @@ import { CREATE_MOVIES_FAILURE, CREATE_MOVIES_LOADING, CREATE_MOVIES_SUCCESS, DE
 
 //* Get Movies Api
 
-const getMoviesAPI=async()=>{
+const getMoviesAPI=async(sort,q)=>{
+    
     try{
-    let data=await  axios.get("https://southern-boatneck-bumper.glitch.me/movies")
+    let data=await  axios.get(`https://southern-boatneck-bumper.glitch.me/movies?q=${q||""}&_sort=${sort ? sort.field : "all"}&_order=${sort ? sort.order:"all"}`);
     return data.data
     }
     catch(e){
@@ -17,11 +18,12 @@ const getMoviesAPI=async()=>{
 
 //* Get Movies Function
 
-export const getMovies =()=>async(dispatch)=>{
+export const getMovies =(sort,q)=>async(dispatch)=>{
+
 dispatch({type:GET_MOVIES_LOADING})
 
 try{
-let movies= await getMoviesAPI()
+let movies= await getMoviesAPI(sort,q)
 dispatch({type:GET_MOVIES_SUCCESS,payload:movies})
 }
 catch(err){

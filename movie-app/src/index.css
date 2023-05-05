@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer components{
     .customFlex{
       @apply flex justify-around
+    }
+    .customTitle{
+        @apply italic font-bold
     }
   }
