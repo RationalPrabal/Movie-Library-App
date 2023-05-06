@@ -86,10 +86,10 @@ Released:"",
                 You can add multiple Genre and Actors by separating them with commas.
                </p>
                <div className='flex justify-center mt-5'>
-                <button onClick={()=>{
+                <button disabled={!data.Title||!data.Image||!data.Year||!data.Runtime||!data.Actors||!data.Director||!data.Plot||!data.Released||!data.imdbRating||!data.Genre} onClick={()=>{
                  dispatch(postMovies(data))
                 onClose()
-                }}  className='bg-green-500 text-white text-bold p-3 '>Add</button>
+                }}  className='bg-green-500 text-white text-bold p-3 disabled:cursor-not-allowed'>Add</button>
                </div>
             </ModalBody>
           </ModalContent>
