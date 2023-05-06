@@ -53,7 +53,9 @@ dispatch({type:CREATE_MOVIES_LOADING})
 
 try{
 await postMoviesAPI(data)
+
 dispatch({type:CREATE_MOVIES_SUCCESS,payload:data})
+
 }
 catch(err){
     dispatch({type:CREATE_MOVIES_FAILURE})

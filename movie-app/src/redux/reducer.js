@@ -31,6 +31,7 @@ switch(type){
         }
     }
     case CREATE_MOVIES_SUCCESS:{
+    
         return{
 ...state, loading:false,error:false,movies:[...state.movies,payload]
         }

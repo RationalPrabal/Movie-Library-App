@@ -74,7 +74,7 @@ Released:movie.Released,
                </div>
                <div className='flex justify-center mt-5'>
                 <button onClose={onClose} onClick={()=>{
-                    dispatch(updateMovies(data,movie.id))
+                   dispatch(updateMovies(data,movie.id))
                     
                 }} className='bg-green-500 text-white text-bold p-3 '>Save Changes</button>
                </div>
